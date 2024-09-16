@@ -35,20 +35,29 @@ function ToDoItem({
   const deleteTodo = useMutation(api.functions.deleteTodo);
 
   return (
-    <li className="w-full flex gap-2 border rounded p-2">
+    <li
+      style={{
+        width: "100%",
+        display: "flex",
+        gap: "0.5rem",
+        border: "1px solid #e5e7eb",
+        borderRadius: "0.25rem",
+        padding: "0.5rem",
+      }}
+    >
       <input
         type="checkbox"
         checked={completed}
         onChange={(e) => updateTodo({ id, completed: e.target.checked })}
       />
-      <div>
-        <p className="font-semibold">{title}</p>
-        <p className="text-sm text-gray-600">{description}</p>
+      <div style={{ marginLeft: "5px" }}>
+        <p style={{ fontWeight: 600 }}>{title}</p>
+        <p style={{ color: "gray", fontWeight: 600 }}>{description}</p>
       </div>
-      <div className="ml-auto">
+      <div style={{ marginLeft: "auto" }}>
         <button
           type="button"
-          className="text-red-500"
+          style={{ color: "red" }}
           onClick={() => deleteTodo({ id })}
         >
           Remove

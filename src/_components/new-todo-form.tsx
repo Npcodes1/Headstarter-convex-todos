@@ -17,13 +17,32 @@ export function NewToDoForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-2">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
+        }}
+      >
+        <h2 style={{ fontSize: "1.5rem", fontWeight: "600", color: "#1f2937" }}>
+          Enter Your Tasks 📒
+        </h2>
         {/* Title */}
-        <label className="text-sm font-semibold" htmlFor="title">
+        <label
+          style={{
+            fontSize: "0.875rem",
+            fontWeight: 600,
+          }}
+          htmlFor="title"
+        >
           Title
         </label>
         <input
-          className="p-1 border rounded"
+          style={{
+            padding: "0.25rem",
+            border: "1px solid #e5e7eb",
+            borderRadius: "0.25rem",
+          }}
           type="text"
           name="title"
           id="title"
@@ -32,11 +51,21 @@ export function NewToDoForm() {
         />
 
         {/* Description */}
-        <label className="text-sm font-semibold" htmlFor="description">
+        <label
+          style={{
+            fontSize: "0.875rem",
+            fontWeight: 600,
+          }}
+          htmlFor="description"
+        >
           Description
         </label>
         <input
-          className="p-1 border rounded"
+          style={{
+            padding: "0.25rem",
+            border: "1px solid #e5e7eb",
+            borderRadius: "0.25rem",
+          }}
           type="text"
           name="description"
           id="description"
@@ -44,7 +73,15 @@ export function NewToDoForm() {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button className="bg-blue-500 p-1 rounded text-white" type="submit">
+        <button
+          style={{
+            backgroundColor: "#3b82f6",
+            padding: "0.25rem",
+            borderRadius: "0.25rem",
+            color: "white",
+          }}
+          type="submit"
+        >
           Create
         </button>
       </div>

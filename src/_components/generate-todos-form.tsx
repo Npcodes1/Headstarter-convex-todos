@@ -28,13 +28,31 @@ export function GenerateTodosForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-2">
-        <h2 className="font-semibold text-lg">Generate Tasks with AI 🪄🔮</h2>
-        <label className="text-sm font-semibold" htmlFor="prompt">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
+        }}
+      >
+        <h2 style={{ fontSize: "1.5rem", fontWeight: "600", color: "#1f2937" }}>
+          Generate Tasks with AI 🪄🔮
+        </h2>
+        <label
+          style={{
+            fontSize: "0.875rem",
+            fontWeight: 600,
+          }}
+          htmlFor="prompt"
+        >
           Prompt
         </label>
         <input
-          className="p-1 border rounded"
+          style={{
+            padding: "0.25rem",
+            border: "1px solid #e5e7eb",
+            borderRadius: "0.25rem",
+          }}
           type="text"
           name="prompt"
           id="prompt"
@@ -42,7 +60,15 @@ export function GenerateTodosForm() {
           onChange={(e) => setPrompt(e.target.value)}
         />
 
-        <button className="bg-blue-500 p-1 rounded text-white" type="submit">
+        <button
+          style={{
+            backgroundColor: "#3b82f6",
+            padding: "0.25rem",
+            borderRadius: "0.25rem",
+            color: "white",
+          }}
+          type="submit"
+        >
           Create
         </button>
       </div>
